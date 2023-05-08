@@ -8,8 +8,11 @@ export default function ToDoButton({
   bg = "",
 }) {
   const [animated, setAnimated] = useState(false);
+  const [clickedAlready, setClickedAlready] = useState(false);
 
   const handleClick = () => {
+    if (clickedAlready) return;
+    setClickedAlready(true);
     if (disappear) setAnimated(true);
 
     if (onClick) onClick();
