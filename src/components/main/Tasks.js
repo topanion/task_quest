@@ -86,18 +86,22 @@ export default function Tasks({ userInfo }) {
 
   return (
     <div className="p-2 min-h-[85]">
-      <div className="flex justify-between items-center mb-3">
-        <RadioButtons
-          mode={mode}
-          options={radioOptions}
-          handleModeChange={handleModeChange}
-        />
-      </div>
+      {todos && appTodos && (
+        <>
+          <div className="flex justify-between items-center mb-3">
+            <RadioButtons
+              mode={mode}
+              options={radioOptions}
+              handleModeChange={handleModeChange}
+            />
+          </div>
 
-      <div className="grid gap-1 lg:grid-cols-3 md:grid-cols-2">
-        {possibleModes[mode]}
-      </div>
-
+          <div className="grid gap-1 lg:grid-cols-3 md:grid-cols-2">
+            {possibleModes[mode]}
+          </div>
+        </>
+      )}{" "}
+      : {<p>Loading...</p>}
       {/*
       <button
         type="button"
