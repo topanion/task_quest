@@ -11,9 +11,10 @@ import { userService } from "@/services/client/supabase/user-service";
 export default function Home() {
   const [hireModalOpen, setHireModalOpen] = useState(false);
   const router = useRouter();
-  const { user, isLoading } = useUser();
+  const { user, error, isLoading } = useUser();
 
   useEffect(() => {
+    if (error) console.log(error);
     if (!isLoading && !user) {
       console.log("Not connected yet");
     } else if (user) {
