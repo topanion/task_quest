@@ -19,7 +19,7 @@ export default function StatMain({ userInfo }) {
         <span>
           {userInfo.character_name} - Level {userInfo.level}
         </span>
-        <div className="absolute right-0 top-0">
+        <div className="">
           Energy :{" "}
           <span className={userInfo.energy === 0 ? "text-red-700" : ""}>
             {userInfo.energy}⚡
