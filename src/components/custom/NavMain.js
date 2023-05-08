@@ -11,7 +11,7 @@ export default function NavMain({ displayMode, setDisplayMode }) {
   return (
     <>
       <nav
-        className={` fixed bottom-0 left-0 flex w-screen items-center justify-between lg:border-b z-10`}
+        className={`bg-white fixed bottom-0 left-0 flex w-screen items-center justify-between lg:border-b z-10`}
       >
         {displayMode !== "Tasks" && (
           <button
@@ -31,7 +31,7 @@ export default function NavMain({ displayMode, setDisplayMode }) {
             className="w-full border"
             onClick={() => setDisplayMode("Adventure")}
           >
-            <p className="bg-white text-lg p-2 rounded-md font-bold hover:bg-gray-200">
+            <p className=" text-lg p-2 rounded-md font-bold hover:bg-gray-200">
               Adventure
             </p>
           </button>
