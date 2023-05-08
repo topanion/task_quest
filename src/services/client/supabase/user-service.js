@@ -1,4 +1,5 @@
 const userLogin = async (user) => {
+  console.log("received user as ", user);
   if (!user) {
     throw new Error("User is undefined");
   }
