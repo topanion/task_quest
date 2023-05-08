@@ -13,9 +13,6 @@ export default function ToDoButton({
     if (disappear) setAnimated(true);
 
     onClick();
-    if (disappear) {
-      setTimeout(setAnimated(false), 2000);
-    }
   };
 
   const handleDeleteClick = (event) => {
@@ -23,9 +20,6 @@ export default function ToDoButton({
     if (disappear) setAnimated(true);
 
     deleteOnClick();
-    if (disappear) {
-      setTimeout(setAnimated(false), 2000);
-    }
   };
 
   return (
