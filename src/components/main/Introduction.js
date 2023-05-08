@@ -14,7 +14,9 @@ export default function Introduction({ userInfo }) {
   } = useForm();
 
   const onSubmit = async (data) => {
-    const created = await characterService.characterCreated(userInfo, data);
+    await characterService.characterCreated(userInfo, data).then((e) => {
+      alert(e);
+    });
   };
 
   const classDescriptions = {
