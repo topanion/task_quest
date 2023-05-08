@@ -4,8 +4,6 @@ import { useRouter } from "next/router";
 import { characterService } from "@/services/client/supabase/character-service";
 
 export default function Introduction({ userInfo }) {
-  const router = useRouter();
-
   const {
     register,
     handleSubmit,
@@ -14,9 +12,7 @@ export default function Introduction({ userInfo }) {
   } = useForm();
 
   const onSubmit = async (data) => {
-    await characterService.characterCreated(userInfo, data).then((e) => {
-      alert(e);
-    });
+    await characterService.characterCreated(userInfo, data).then((e) => {});
   };
 
   const classDescriptions = {

@@ -5,8 +5,8 @@ const characterCreated = async (user, data) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         table: "users",
-        key: "email",
-        value: user.email,
+        key: "sub",
+        value: user.sub,
         updatedData: {
           character_name: data.name,
           character_class: data.characterClass,

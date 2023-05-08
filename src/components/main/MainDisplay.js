@@ -37,12 +37,16 @@ export default function MainDisplay({ userInfo }) {
               <div className="mt-[7vh] mx-[5%]">
                 <Character userInfo={userInfo} />
               </div>
+
+              <div className="border mx-[5%] rounded-md mt-3 top-0 h-[50vh] lg:overflow-hidden overflow-scroll">
+                {mode[displayMode]}
+              </div>
             </>
           )}
 
-          <div className="border mx-[5%] rounded-md mt-3 top-0 h-[50vh] lg:overflow-hidden overflow-scroll">
-            {mode[displayMode]}
-          </div>
+          {displayMode === "Intro" && (
+            <div className="pt-[5%]">{mode["Intro"]}</div>
+          )}
         </>
       )}
     </>
