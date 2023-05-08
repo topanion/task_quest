@@ -1,15 +1,11 @@
 import About from "@/components/About";
-import { ModalButton, Modal } from "@/components/global/Modal";
 import NavButton from "@/components/global/NavButton";
 import Navbar from "@/components/global/Navbar";
 import { useState, useEffect } from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/router";
-import TestForm from "@/components/custom/TestForm";
-import { userService } from "@/services/client/supabase/user-service";
 
 export default function Home() {
-  const [hireModalOpen, setHireModalOpen] = useState(false);
   const router = useRouter();
   const { user, error, isLoading } = useUser();
 
@@ -24,11 +20,9 @@ export default function Home() {
 
   return (
     <>
-      <Modal isOpen={hireModalOpen} onClose={() => setHireModalOpen(false)}>
-        <TestForm />
-      </Modal>
       <Navbar title={<NavButton name="TofuMasque" hover={false} />}>
         <NavButton name="Se connecter" link="/api/auth/login" />
+        <NavButton name="Se déconnecter" link="/api/auth/logout" />
       </Navbar>
 
       <main
