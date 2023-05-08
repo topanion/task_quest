@@ -29,8 +29,8 @@ const addEnergy = async (user, value) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         table: "users",
-        key: "email",
-        value: user.email,
+        key: "sub",
+        value: user.sub,
         updatedData: {
           energy: user.energy + value,
         },
