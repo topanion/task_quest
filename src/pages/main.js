@@ -13,6 +13,8 @@ function Main() {
 
   useEffect(() => {
     const defineUserInfo = () => {
+      console.log("user given by useUser is ", user);
+
       userService.userLogin(user).then((e) => {
         console.log(e);
         if (e.data) setUserInfo(e.data[0]);
