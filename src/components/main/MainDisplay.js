@@ -19,7 +19,9 @@ export default function MainDisplay({ userInfo }) {
   const mode = {
     Intro: <Introduction userInfo={userInfo} />,
     Tasks: <Tasks userInfo={userInfo} />,
-    Adventure: <Adventure userInfo={userInfo} />,
+    Adventure: (
+      <Adventure userInfo={userInfo} setDisplayMode={setDisplayMode} />
+    ),
     Stats: <Stats userInfo={userInfo} />,
   };
 
@@ -30,16 +32,18 @@ export default function MainDisplay({ userInfo }) {
           {displayMode !== "Intro" && (
             <>
               <StatMain userInfo={userInfo} />
-              <NavMain
-                displayMode={displayMode}
-                setDisplayMode={setDisplayMode}
-              />
+              {displayMode !== "Travel" && (
+                <NavMain
+                  displayMode={displayMode}
+                  setDisplayMode={setDisplayMode}
+                />
+              )}
               <div className="mt-[7vh] mx-[5%]">
                 <Character userInfo={userInfo} />
               </div>
 
-              <div className="border mx-[5%] rounded-md mt-3 top-0 h-[50vh] lg:overflow-hidden overflow-scroll">
-                {mode[displayMode]}
+              <div className="border mx-[5%] rounded-md mt-3 top-0 max-h-[45vh] lg:overflow-hidden overflow-scroll">
+                {mode[displayMode === "Travel" ? "Adventure" : displayMode]}
               </div>
             </>
           )}

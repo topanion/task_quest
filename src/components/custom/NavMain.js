@@ -48,13 +48,6 @@ export default function NavMain({ displayMode, setDisplayMode }) {
             </p>
           </button>
         )}
-        {/** 
-        <a href="/api/auth/logout">
-          <p className="text-lg p-2 rounded-md font-bold text-red-600 hover:bg-gray-200">
-            Se déconnecter
-          </p>
-        </a>
-        */}
       </nav>
     </>
   );

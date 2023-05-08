@@ -16,9 +16,9 @@ export default function StatMain({ userInfo }) {
   return (
     <>
       <nav className="fixed top-0 left-0 flex w-screen border-bottom items-center justify-between mb-3 lg:border-b z-10 px-[5%] py-1 text-lg font-bold">
-        {/*<span>
+        <span>
           {userInfo.character_name} - Level {userInfo.level}
-  </span>*/}
+        </span>
         <div className="absolute right-0 top-0">
           Energy :{" "}
           <span className={userInfo.energy === 0 ? "text-red-700" : ""}>
