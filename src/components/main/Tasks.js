@@ -86,7 +86,7 @@ export default function Tasks({ userInfo }) {
 
   return (
     <div className="p-2 min-h-[85]">
-      {todos && appTodos && (
+      {todos && appTodos ? (
         <>
           <div className="flex justify-between items-center mb-3">
             <RadioButtons
@@ -100,8 +100,9 @@ export default function Tasks({ userInfo }) {
             {possibleModes[mode]}
           </div>
         </>
-      )}{" "}
-      : {<p>Loading...</p>}
+      ) : (
+        <p>Loading...</p>
+      )}
       {/*
       <button
         type="button"
