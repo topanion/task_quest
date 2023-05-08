@@ -24,16 +24,12 @@ const characterCreated = async (user, data) => {
 
 const addEnergy = async (user, value) => {
   try {
-    const request = await fetch("api/supabase", {
-      method: "PUT",
+    const request = await fetch("api/energy", {
+      method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        table: "users",
-        key: "sub",
-        value: user.sub,
-        updatedData: {
-          energy: user.energy + value,
-        },
+        id: user.id,
+        energy: value,
       }),
     });
     const response = await request.json();
@@ -51,8 +47,8 @@ const setCharacterCreatedFalse = async (user) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         table: "users",
-        key: "email",
-        value: user.email,
+        key: "sub",
+        value: user.sub,
         updatedData: {
           character_created: false,
         },

@@ -6,13 +6,7 @@ export default function DoneToDos({ todos, onClick }) {
   const filtered = todos.filter((todo) => todo.completed);
 
   const handleClick = (id) => {
-    if (
-      confirm(
-        "Press OK if you checked that task by mistake and want to cancel it"
-      )
-    ) {
-      onClick(id);
-    }
+    onClick(id);
   };
 
   return (

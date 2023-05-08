@@ -6,6 +6,7 @@ import ToDoUser from "./task/ToDoUser";
 import DoneToDos from "./task/DoneToDos";
 import RadioButtons from "../custom/RadioButtons";
 import ToDoList from "./task/ToDoList";
+import ToDoButton from "../custom/ToDoButton";
 
 export default function Tasks({ userInfo }) {
   const [todos, setTodos] = useState(null);
@@ -68,7 +69,12 @@ export default function Tasks({ userInfo }) {
   const possibleModes = {
     todouser: <ToDoUser todos={todos} onClick={taskDone} />,
     donetodos: <DoneToDos todos={todos} onClick={undoTask} />,
-    apptodos: <ToDoList todos={appTodos} onClick={onClickAddUserTodo} />,
+    apptodos: (
+      <>
+        <ToDoButton text={"Write your own task... ✎ (not implemented yet)"} />
+        <ToDoList todos={appTodos} onClick={onClickAddUserTodo} />{" "}
+      </>
+    ),
     alltodos: <ToDoList todos={todos} onClick={undoUserTodo} alert={true} />,
   };
 
@@ -81,7 +87,6 @@ export default function Tasks({ userInfo }) {
     { value: "donetodos", label: "Completed" },
     { value: "apptodos", label: "New tasks" },
     { value: "alltodos", label: "Delete" },
-    // Add more options as needed
   ];
 
   return (

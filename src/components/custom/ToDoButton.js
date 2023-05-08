@@ -12,7 +12,7 @@ export default function ToDoButton({
   const handleClick = () => {
     if (disappear) setAnimated(true);
 
-    onClick();
+    if (onClick) onClick();
   };
 
   const handleDeleteClick = (event) => {
