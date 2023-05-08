@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
       // get will return an array of object matching (usually only one)
-      const data = await db.get("users", "email", req.body.user.email);
+      const data = await db.get("users", "sub", req.body.user.sub);
 
       // when the length is zero, get will return null which means that, since user succeed, we have to
       // create the user

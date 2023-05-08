@@ -1,5 +1,4 @@
 const userLogin = async (user) => {
-  console.log("received user as ", user);
   if (!user) {
     throw new Error("User is undefined");
   }
@@ -9,10 +8,10 @@ const userLogin = async (user) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        table: "users",
-        key: "email",
         user: {
           picture: user.picture,
+          sub: user.sub,
+          name: user.name,
           email: user.email,
         },
       }),
