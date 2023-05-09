@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ToDoButton from "../custom/ToDoButton";
+import AdventureButton from "../custom/AdventureButton";
 
 export default function Adventure({ userInfo, setDisplayMode }) {
   const [adventureMode, setAdventureMode] = useState(null);
@@ -20,20 +21,24 @@ export default function Adventure({ userInfo, setDisplayMode }) {
     <div className="p-2 min-h-[85] flex flex-col gap-2">
       {!adventureMode ? (
         <>
-          <ToDoButton
+          <AdventureButton
             key="idk"
-            text={"Visit the village - 2⚡"}
+            text={"Explore around"}
             onClick={() => handleVisit()}
+            userInfo={userInfo}
+            energy={2}
           />
-          <ToDoButton
+          <AdventureButton
             key="idklol"
-            text={"Explore the forest - 5⚡"}
-            onClick={() => console.log("")}
+            text={"Dummy Practice"}
+            onClick={() => {}}
+            energy={5}
+            userInfo={userInfo}
           />
         </>
       ) : (
         <>
-          <div className="p-3">
+          <div className="p-3 transition duration-400 ease-in">
             <div className="p-2">
               <p>
                 As you step into the dense forest, the tranquil ambiance gives
